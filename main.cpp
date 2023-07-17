@@ -1,3 +1,4 @@
+/// Copyright (c) 2023 Araf Al Jami
 #include <cpr/cpr.h>
 #include <iostream>
 #include <nlohmann/json.hpp>
