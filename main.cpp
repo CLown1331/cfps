@@ -136,6 +136,8 @@ int processOpts(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
+    const clock_t tStart = clock();
+
     int rv;
 
     rv = processOpts(argc, argv);
@@ -167,12 +169,15 @@ int main(int argc, char **argv)
     std::string problemUrl = "https://codeforces.com/contest/" + std::to_string(p.contestId) + "/problem/" + p.index;
 
     std::cout << "Looking for a problem in the range [" << ratingLowerBound << ", " << ratingUpperBound << "] for " << username << "\n";
-    std::cout << p.contestId << p.index << " " << p.name << " " << p.rating << " rating"
-              << "\n";
+    std::cout << p.contestId << p.index << " " << p.name << "\nRating: " << p.rating << "\n";
+
+    double totalRuntime = static_cast<double>(clock() - tStart) / CLOCKS_PER_SEC;
+
+    std::cout << "Runtime: " << std::setprecision(3) << totalRuntime << "s\n";
 
     rv = execl("/usr/bin/open", "-u", problemUrl.c_str(), NULL);
 
     assert(rv == 0 && "Failed to open browser");
-
+    
     return 0;
 }
