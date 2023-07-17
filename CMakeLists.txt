@@ -16,3 +16,5 @@ FetchContent_MakeAvailable(json)
 target_link_libraries(cfps PRIVATE cpr::cpr)
 target_link_libraries(cfps PRIVATE nlohmann_json::nlohmann_json)
 
+install(TARGETS cfps RUNTIME DESTINATION bin)
+
