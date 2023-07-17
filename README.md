@@ -22,3 +22,7 @@ cfps -l800 -u1300 -hCLown1331
 - `-l` - lower bound
 - `-u` - upper bound
 - `-h` - handle
+
+## Web based version
+
+[https://clown1331.github.io/cfps-web/](https://clown1331.github.io/cfps-web/)
