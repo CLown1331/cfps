@@ -143,7 +143,7 @@ int main(int argc, char **argv)
     rv = processOpts(argc, argv);
 
     assert(rv == 0 && "Failed to process options");
-    
+
     assert(ratingLowerBound <= ratingUpperBound && "Lower bound must be less than or equal to upper bound");
 
     rv = fetchProblems();
@@ -178,6 +178,6 @@ int main(int argc, char **argv)
     rv = execl("/usr/bin/open", "-u", problemUrl.c_str(), NULL);
 
     assert(rv == 0 && "Failed to open browser");
-    
+
     return 0;
 }
