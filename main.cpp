@@ -174,6 +174,8 @@ int main(int argc, char **argv)
 
     double totalRuntime = static_cast<double>(clock() - tStart) / CLOCKS_PER_SEC;
 
+    std::cout << "Unsolved: " << ub - lb + 1 << "\n";
+
     std::cout << "Runtime: " << std::setprecision(3) << totalRuntime << "s\n";
 
     rv = execl("/usr/bin/open", "-u", problemUrl.c_str(), NULL);
