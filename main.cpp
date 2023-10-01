@@ -180,7 +180,11 @@ int main(int argc, char **argv)
 
     std::cout << "Runtime: " << std::setprecision(3) << totalRuntime << "s\n";
 
+    printf("URL: %s\n", problemUrl.c_str());
+
     rv = execl("/usr/bin/open", "-u", problemUrl.c_str(), NULL);
+
+    rv = !rv || execl("/usr/bin/wslview", "-u", problemUrl.c_str(), NULL);
 
     assert(rv == 0 && "Failed to open browser");
 
