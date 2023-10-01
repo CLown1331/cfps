@@ -138,7 +138,7 @@ int processOpts(int argc, char **argv)
 int main(int argc, char **argv)
 {
     std::cout << "Copyright (c) 2023 Araf Al Jami" << std::endl;
-    
+
     const clock_t tStart = clock();
 
     int rv;
@@ -180,7 +180,7 @@ int main(int argc, char **argv)
 
     std::cout << "Runtime: " << std::setprecision(3) << totalRuntime << "s\n";
 
-    printf("URL: %s\n", problemUrl.c_str());
+    std::cout << "URL: " << problemUrl << "\n";
 
     rv = execl("/usr/bin/open", "-u", problemUrl.c_str(), NULL);
 
