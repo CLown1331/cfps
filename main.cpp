@@ -124,6 +124,7 @@ int processOpts(int argc, char **argv)
             break;
         case 'u':
             ratingUpperBound = std::stoi(optarg);
+            ratingLowerBound = std::min(ratingUpperBound, ratingLowerBound);
             break;
         case 'h':
             username = optarg;
