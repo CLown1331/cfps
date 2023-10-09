@@ -120,6 +120,7 @@ int processOpts(int argc, char **argv)
         {
         case 'l':
             ratingLowerBound = std::stoi(optarg);
+            ratingUpperBound = std::max(ratingUpperBound, ratingLowerBound);
             break;
         case 'u':
             ratingUpperBound = std::stoi(optarg);
